@@ -15,6 +15,3 @@ Status
 ------
 
 Tests pass.
-
-
-http://www.refaktorlabs.com
