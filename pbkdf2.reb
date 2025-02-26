@@ -1,7 +1,9 @@
 REBOL [
-    title: "Password-Based Key Derivation Function 2"
+    title:  "Password-Based Key Derivation Function 2"
     author: @Oldes
-    needs: 3.11.0
+    needs:   3.11.0
+    version: 1.0.0
+    exports: [pbkdf2]
 ]
 
 pbkdf2: function [
