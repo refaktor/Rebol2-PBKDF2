@@ -46,6 +46,7 @@ REBOL [
 scram: func [
     "SCRAM Authentication Exchange"
     state [object!] "Populated context with input/output values"
+    /local hash ;; not needed in the state
 ][
     with state [
         SaltedPassword: make binary! 32
