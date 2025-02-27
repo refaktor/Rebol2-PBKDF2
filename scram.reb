@@ -46,11 +46,9 @@ REBOL [
 scram: func [
     "SCRAM Authentication Exchange"
     state [object!] "Populated context with input/output values"
-    /local hash-len
 ][
     with state [
-        hash-len: select [sha1 20 sha224 28 sha256 32 sha384 48 sha512 64] :method
-        SaltedPassword: make binary! hash-len
+        SaltedPassword: make binary! 32
         hash: join salt #{00000001}
         hash: SaltedPassword: checksum/with hash :method :password
         loop iterations - 1 [
