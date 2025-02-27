@@ -53,7 +53,7 @@ scram: func [
         SaltedPassword: make binary! hash-len
         hash: join salt #{00000001}
         hash: SaltedPassword: checksum/with hash :method :password
-        repeat j (iterations - 1) [
+        loop iterations - 1 [
             SaltedPassword: SaltedPassword xor (hash: checksum/with hash :method :password)
         ]
         ClientKey: checksum/with "Client Key" :method :SaltedPassword
