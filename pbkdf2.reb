@@ -21,7 +21,7 @@ pbkdf2: function [
     ;; Initialize last block with the salt
     last: copy salt
     ;; Determine the length of the hash output for the selected method
-    hash-len: length? to string! checksum #{} method
+    hash-len: select [sha1 20 sha224 28 sha256 32 sha384 48 sha512 64] :method
     ;; Calculate the number of hash blocks needed to meet the requested length
     block-cnt: round/ceiling (length / hash-len)
 
